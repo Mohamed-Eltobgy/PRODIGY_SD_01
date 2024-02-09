@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -17,8 +16,7 @@ public class HelloApplication extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
         Scene scene = new Scene(root);
 
-        String imagePath = "D:\\Prodigy Intern\\PRODIGY_SD_01\\Temperature-Converter\\src\\thermo.png";
-        Image icon = new Image(new File(imagePath).toURI().toString());
+        Image icon = new Image(getClass().getResource("thermo.png").toExternalForm());
         stage.getIcons().add(icon);
         stage.setTitle("Temperature Converter");
         stage.setScene(scene);
